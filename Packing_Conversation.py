@@ -28,7 +28,8 @@ for i in data:
                 continue
 
             elif j.find('님이 들어왔습니다.') != -1: # if user reenter, remove user from out_member_list
-                out_member_list.remove(out_member)
+                if out_member in out_member_list:
+                    out_member_list.remove(out_member)
                 continue
 
         content = j.split(',', 2) # ['2020. 11. 30. 19:51', ' ㅎㅇ : 사진']
