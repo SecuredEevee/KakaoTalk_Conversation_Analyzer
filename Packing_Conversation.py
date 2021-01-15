@@ -12,10 +12,11 @@ def parse_user_name(nick_name):
 content_all = []
 out_member_list = []
 for i in data:
+    # print('i : ', i)
     for j in data[i]:
-        # print(j)
+        # print('j : ', j)
 
-        if j[0]!= '2' or j[1] != '0' or j[2] != '2': # skip if not conversation
+        if len(j) < 10 or j[0]!= '2' or j[1] != '0' or j[2] != '2': # skip if not conversation
             continue
         else:
             out_member=''
@@ -46,6 +47,7 @@ for i in data:
 _name = []
 _date = []
 _content = []
+out_member_list.append(' 방장봇 ') # hard coding for excluding bot
 print(out_member_list)
 for ii in content_all:
     iii = ii.split(',', 3)
